@@ -1,8 +1,9 @@
 import { roomType } from "@/utils/types";
 import Image from "next/image";
 import Link from "next/link";
+import { Models } from "node-appwrite";
 
-export default function RoomCard({ room }: { room: roomType }) {
+export default function RoomCard({ room }: { room: roomType | Models.Document }) {
   return (
     <div className="bg-white shadow rounded-lg p-4 mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
       <div className="flex flex-col sm:flex-row sm:space-x-4">

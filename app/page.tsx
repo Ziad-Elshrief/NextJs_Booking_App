@@ -1,8 +1,9 @@
 import Heading from "@/components/Heading";
 import RoomCard from "@/components/RoomCard";
-import rooms from "@/data/rooms.json";
+import getAllRooms from "./actions/getAllRoms";
 
-export default function Home() {
+export default async function Home() {
+  const rooms = await getAllRooms()
   return (
     <>
       <Heading title='Available Rooms'/>

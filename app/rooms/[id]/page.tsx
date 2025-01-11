@@ -1,13 +1,13 @@
 import BookingForm from "@/components/BookingForm";
 import Heading from "@/components/Heading";
-import rooms from "@/data/rooms.json";
+import getSingleRoom from "@/app/actions/getSingleRoom";
 import Image from "next/image";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
-export default function RoomPage({ params }: { params: { id: string } }) {
+export default async function RoomPage({ params }: { params: { id: string } }) {
   const { id } = params;
-  const room = rooms.find((room) => room.$id === id);
+  const room = await getSingleRoom(id)
   return (
     <>
       {room ? (
