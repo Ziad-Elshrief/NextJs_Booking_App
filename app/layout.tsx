@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AuthWrapper from "@/components/AuthWrapper";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 const inter = Inter({subsets:['latin']})
 
@@ -17,6 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <AuthWrapper>
     <html lang="en">
       <body
         className={`${inter.className}`}
@@ -26,7 +30,9 @@ export default function RootLayout({
         {children}
         </main>
         <Footer/>
+        <ToastContainer />
       </body>
     </html>
+    </AuthWrapper>
   );
 }
