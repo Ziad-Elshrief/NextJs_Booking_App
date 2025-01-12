@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
 export default async function RoomPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+  const { id } = await params;
   const room = await getSingleRoom(id);
   const bucketId = process.env.NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ROOMS;
   const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT;
@@ -62,7 +62,7 @@ export default async function RoomPage({ params }: { params: { id: string } }) {
                 </ul>
               </div>
             </div>
-            <BookingForm />
+            <BookingForm room={room} />
           </div>
         </>
       ) : (

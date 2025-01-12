@@ -20,7 +20,7 @@ export default async function getMyRooms() {
     );
     return rooms
   } catch (error) {
-    console.log('Failed to get user rooms',error)
+    console.log('Failed to get user\'s rooms',error)
     redirect('/error')
   }
 }
