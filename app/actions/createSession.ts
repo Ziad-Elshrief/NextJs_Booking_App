@@ -5,8 +5,8 @@ import { prevStateType } from "@/utils/types";
 import { cookies } from "next/headers";
 
 export default async function createSession(prevState: prevStateType,formData:FormData){
-    const email=formData.get('email');
-    const password=formData.get('password');
+    const email=formData.get('email') as string;
+    const password=formData.get('password') as string;
     if(!email || !password){
         return {
             error:'Please fill out all fields',
@@ -14,7 +14,7 @@ export default async function createSession(prevState: prevStateType,formData:Fo
     }
     const {account}=await createAdminClient()
     try{
-        const session = await account.createEmailPasswordSession(email.toString(),password.toString())
+        const session = await account.createEmailPasswordSession(email,password)
         ;(await cookies()).set('appwrite-session',session.secret,{
             httpOnly:true,
             secure:true,

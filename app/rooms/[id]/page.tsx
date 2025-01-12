@@ -7,7 +7,11 @@ import { FaChevronLeft } from "react-icons/fa";
 
 export default async function RoomPage({ params }: { params: { id: string } }) {
   const { id } = params;
-  const room = await getSingleRoom(id)
+  const room = await getSingleRoom(id);
+  const bucketId = process.env.NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ROOMS;
+  const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT;
+  const imageUrl = `https://cloud.appwrite.io/v1/storage/buckets/${bucketId}/files/${room.image}/view?project=${projectId}`;
+  const imageSrc = room.image ? imageUrl : "/images/no-image.jpg";
   return (
     <>
       {room ? (
@@ -24,7 +28,7 @@ export default async function RoomPage({ params }: { params: { id: string } }) {
 
             <div className="flex flex-col sm:flex-row sm:space-x-6">
               <Image
-                src=""
+                src={imageSrc}
                 width={400}
                 height={100}
                 alt={room.name}
@@ -32,9 +36,7 @@ export default async function RoomPage({ params }: { params: { id: string } }) {
               />
 
               <div className="mt-4 sm:mt-0 sm:flex-1">
-                <p className="text-gray-600 mb-4">
-                  {room.description}
-                </p>
+                <p className="text-gray-600 mb-4">{room.description}</p>
 
                 <ul className="space-y-2">
                   <li>
@@ -48,7 +50,7 @@ export default async function RoomPage({ params }: { params: { id: string } }) {
                     {room.availability}
                   </li>
                   <li>
-                    <span className="font-semibold text-gray-800">Price:</span>
+                    <span className="font-semibold text-gray-800">Price: </span>
                     ${room.price_per_hour}/hour
                   </li>
                   <li>

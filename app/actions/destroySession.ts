@@ -18,8 +18,9 @@ export default async function destroySession() {
       success: true,
     };
   } catch (error) {
+    console.log('Error Deleting session: ',error)
     return {
-      error: "Error Deleting Session",
+      error: "Error deleting session",
     };
   }
 }
