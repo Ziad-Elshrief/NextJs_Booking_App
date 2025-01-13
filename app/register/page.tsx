@@ -22,16 +22,16 @@ export default function RegisterPage() {
   },[router, state])
   return (
     <div className="flex items-center justify-center">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm mt-20">
+      <div className="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-6 w-full max-w-sm mt-20">
         <form action={formAction}>
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6 dark:text-gray-100">
             Register
           </h2>
 
           <div className="mb-4">
             <label
               htmlFor="name"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-2 dark:text-gray-200"
             >
               Name
             </label>
@@ -39,7 +39,7 @@ export default function RegisterPage() {
               type="text"
               id="name"
               name="name"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-slate-800 placeholder:text-gray-400 dark:text-white"
               required
             />
           </div>
@@ -47,7 +47,7 @@ export default function RegisterPage() {
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-2 dark:text-gray-200"
             >
               Email
             </label>
@@ -55,7 +55,7 @@ export default function RegisterPage() {
               type="email"
               id="email"
               name="email"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-slate-800 placeholder:text-gray-400 dark:text-white"
               required
             />
           </div>
@@ -63,7 +63,7 @@ export default function RegisterPage() {
           <div className="mb-4">
             <label
               htmlFor="password"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-2 dark:text-gray-200"
             >
               Password
             </label>
@@ -71,7 +71,7 @@ export default function RegisterPage() {
               type="password"
               id="password"
               name="password"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-slate-800 placeholder:text-gray-400 dark:text-white"
               required
             />
           </div>
@@ -79,7 +79,7 @@ export default function RegisterPage() {
           <div className="mb-6">
             <label
               htmlFor="confirm-password"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-2 dark:text-gray-200"
             >
               Confirm Password
             </label>
@@ -87,7 +87,7 @@ export default function RegisterPage() {
               type="password"
               id="confirm-password"
               name="confirm-password"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-slate-800 placeholder:text-gray-400 dark:text-white"
               required
             />
           </div>
@@ -100,7 +100,7 @@ export default function RegisterPage() {
               Register
             </button>
 
-            <p>
+            <p className="dark:text-white">
               Already have an account?
               <Link href="/login" className="ml-2 text-blue-500">
                 Login

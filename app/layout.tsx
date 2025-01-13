@@ -23,14 +23,14 @@ export default function RootLayout({
     <AuthWrapper>
     <html lang="en">
       <body
-        className={`${inter.className}`}
+        className={`${inter.className} bg-white dark:bg-slate-800`}
       >
         <Header/>
         <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         {children}
         </main>
         <Footer/>
-        <ToastContainer />
+        <ToastContainer theme="colored" />
       </body>
     </html>
     </AuthWrapper>

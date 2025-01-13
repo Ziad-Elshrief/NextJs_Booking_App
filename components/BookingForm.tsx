@@ -24,15 +24,15 @@ export default function BookingForm({
     }
   }, [router, state]);
   return (
-    <div className="mt-6">
-      <h2 className="text-xl font-bold">Book this Room</h2>
+    <div className="mt-6 dark:bg-slate-800">
+      <h2 className="text-xl font-bold dark:text-white">Book this Room</h2>
       <form className="mt-4" action={formAction}>
         <input type="hidden" name="room_id" value={room.$id} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label
               htmlFor="check_in_date"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Check-In Date
             </label>
@@ -40,14 +40,14 @@ export default function BookingForm({
               type="date"
               id="check_in_date"
               name="check_in_date"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-slate-800 dark:text-gray-100"
               required
             />
           </div>
           <div>
             <label
               htmlFor="check_in_time"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Check-In Time
             </label>
@@ -55,14 +55,14 @@ export default function BookingForm({
               type="time"
               id="check_in_time"
               name="check_in_time"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-slate-800 dark:text-gray-100"
               required
             />
           </div>
           <div>
             <label
               htmlFor="check_out_date"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Check-Out Date
             </label>
@@ -70,14 +70,14 @@ export default function BookingForm({
               type="date"
               id="check_out_date"
               name="check_out_date"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-slate-800 dark:text-gray-100"
               required
             />
           </div>
           <div>
             <label
               htmlFor="check_out_time"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Check-Out Time
             </label>
@@ -85,7 +85,7 @@ export default function BookingForm({
               type="time"
               id="check_out_time"
               name="check_out_time"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-slate-800 dark:text-gray-100"
               required
             />
           </div>

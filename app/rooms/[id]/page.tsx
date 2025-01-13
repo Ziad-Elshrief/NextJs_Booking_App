@@ -17,13 +17,13 @@ export default async function RoomPage({ params }: { params: { id: string } }) {
       {room ? (
         <>
           <Heading title={room.name} />
-          <div className="bg-white shadow rounded-lg p-6">
+          <div className="bg-white dark:bg-slate-800 shadow-xl rounded-lg p-6">
             <Link
               href="/"
-              className="flex items-center text-gray-600 hover:text-gray-800 mb-4"
+              className="flex items-center text-gray-600 dark:text-gray-200  hover:text-gray-800 dark:hover:text-gray-400 mb-4"
             >
               <FaChevronLeft className="inline mr-1" />
-              <span className="ml-2">Back to Rooms</span>
+              <span className="ml-2 ">Back to Rooms</span>
             </Link>
 
             <div className="flex flex-col sm:flex-row sm:space-x-6">
@@ -36,25 +36,25 @@ export default async function RoomPage({ params }: { params: { id: string } }) {
               />
 
               <div className="mt-4 sm:mt-0 sm:flex-1">
-                <p className="text-gray-600 mb-4">{room.description}</p>
+                <p className="text-gray-600 mb-4 dark:text-gray-300">{room.description}</p>
 
                 <ul className="space-y-2">
-                  <li>
-                    <span className="font-semibold text-gray-800">Size:</span>{" "}
+                  <li className="dark:text-white">
+                    <span className="font-semibold text-gray-800 dark:text-gray-200">Size:</span>{" "}
                     {room.sqft}
                   </li>
-                  <li>
-                    <span className="font-semibold text-gray-800">
+                  <li className="dark:text-white">
+                    <span className="font-semibold text-gray-800 dark:text-gray-200">
                       Availability:
                     </span>
                     {room.availability}
                   </li>
-                  <li>
-                    <span className="font-semibold text-gray-800">Price: </span>
+                  <li className="dark:text-white">
+                    <span className="font-semibold text-gray-800 dark:text-gray-200">Price: </span>
                     ${room.price_per_hour}/hour
                   </li>
-                  <li>
-                    <span className="font-semibold text-gray-800">
+                  <li className="dark:text-white">
+                    <span className="font-semibold text-gray-800 dark:text-gray-200">
                       Address:
                     </span>{" "}
                     {room.address}
@@ -66,7 +66,7 @@ export default async function RoomPage({ params }: { params: { id: string } }) {
           </div>
         </>
       ) : (
-        <Heading title="Room not  found" />
+        <Heading title="Room Not Found" />
       )}
     </>
   );

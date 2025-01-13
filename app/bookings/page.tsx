@@ -12,7 +12,7 @@ export default async function BookingsPage() {
           <BookedRoomCard key={booking.$id} booking={booking} />
         ))
       ) : (
-        <p className="text-gray-600 mt-4">You have no bookings</p>
+        <p className="text-gray-600 dark:text-gray-300 mt-4">You have no bookings</p>
       )}
     </>
   );

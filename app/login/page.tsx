@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { useActionState, useEffect } from "react";
 import { useAuth } from "@/context/authContext";
+import { FaSignInAlt } from "react-icons/fa";
 
 export default function LoginPage() {
   const [state,formAction]=useActionState(createSession,{error:''})
@@ -24,16 +25,16 @@ export default function LoginPage() {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm mt-20">
+      <div className="bg-white dark:bg-slate-700 shadow-lg rounded-lg p-6 w-full max-w-sm mt-20">
         <form action={formAction}>
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
-            Login
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-6 dark:text-gray-100">
+            <FaSignInAlt className="mr-1 inline" /> Login
           </h2>
 
           <div className="mb-4">
             <label
               htmlFor="email"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-2 dark:text-gray-200"
             >
               Email
             </label>
@@ -41,7 +42,7 @@ export default function LoginPage() {
               type="email"
               id="email"
               name="email"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-slate-800 placeholder:text-gray-400 dark:text-white"
               required
             />
           </div>
@@ -49,7 +50,7 @@ export default function LoginPage() {
           <div className="mb-6">
             <label
               htmlFor="password"
-              className="block text-gray-700 font-bold mb-2"
+              className="block text-gray-700 font-bold mb-2 dark:text-gray-200"
             >
               Password
             </label>
@@ -57,7 +58,7 @@ export default function LoginPage() {
               type="password"
               id="password"
               name="password"
-              className="border rounded w-full py-2 px-3"
+              className="border rounded w-full py-2 px-3 dark:bg-slate-800 placeholder:text-gray-400 dark:text-white"
               required
             />
           </div>
@@ -70,7 +71,7 @@ export default function LoginPage() {
               Login
             </button>
 
-            <p>
+            <p className="dark:text-white">
               Do not have an account?
               <Link href="/register" className="ml-2 text-blue-500">
                 Register

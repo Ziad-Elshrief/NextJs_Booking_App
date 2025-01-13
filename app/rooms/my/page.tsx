@@ -10,7 +10,7 @@ export default async function MyRoomsPage() {
       {rooms.length ? (
         rooms.map((room) => <MyRoomCard key={room.$id} room={room} />)
       ) : (
-        <p>You have no room listings</p>
+        <p className="text-gray-700 dark:text-gray-300">You have no room listings</p>
       )}
     </>
   );

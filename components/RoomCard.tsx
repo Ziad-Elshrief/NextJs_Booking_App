@@ -13,7 +13,7 @@ export default function RoomCard({
   const imageUrl = `https://cloud.appwrite.io/v1/storage/buckets/${bucketId}/files/${room.image}/view?project=${projectId}`;
   const imageSrc = room.image? imageUrl : '/images/no-image.jpg'
   return (
-    <div className="bg-white shadow rounded-lg p-4 mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+    <div className="bg-white dark:bg-slate-700 shadow rounded-lg p-4 mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
       <div className="flex flex-col sm:flex-row sm:space-x-4">
         <Image
           src={imageSrc}
@@ -23,17 +23,17 @@ export default function RoomCard({
           className="w-full sm:w-32 sm:h-32 mb-3 sm:mb-0 object-cover rounded-lg"
         />
         <div className="space-y-1">
-          <h4 className="text-lg font-semibold">{room.name}</h4>
-          <p className="text-sm text-gray-600">
-            <span className="font-semibold text-gray-800"> Address:</span>{" "}
+          <h4 className="text-lg font-semibold dark:text-white">{room.name}</h4>
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            <span className="font-semibold text-gray-800 dark:text-gray-200"> Address:</span>{" "}
             {room.address}
           </p>
-          <p className="text-sm text-gray-600">
-            <span className="font-semibold text-gray-800"> Availability:</span>{" "}
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            <span className="font-semibold text-gray-800 dark:text-gray-200"> Availability:</span>{" "}
             {room.availability}
           </p>
-          <p className="text-sm text-gray-600">
-            <span className="font-semibold text-gray-800"> Price:</span> $
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            <span className="font-semibold text-gray-800 dark:text-gray-200"> Price:</span> $
             {room.price_per_hour}/hour
           </p>
         </div>

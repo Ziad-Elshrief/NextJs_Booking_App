@@ -16,25 +16,24 @@ export default function BookedRoomCard({
 
     const year = date.getFullYear();
 
-    const timeOptions = {
+    const time = date.toLocaleString("en-US", {
       hour: "numeric",
       minute: "numeric",
       hour12: true,
       timeZone: "UTC",
-    };
-    const time = date.toLocaleString("en-US", timeOptions);
+    });
 
     return `${month} ${day}, ${year} at ${time}`;
   };
   return (
-    <div className="bg-white shadow rounded-lg p-4 mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+    <div className="bg-white dark:bg-slate-700 shadow rounded-lg p-4 mt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center">
       <div>
-        <h4 className="text-lg font-semibold">{room.name}</h4>
-        <p className="text-sm text-gray-600">
+        <h4 className="text-lg font-semibold dark:text-white">{room.name}</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-300">
           <strong>Check In: </strong>
           {formatDate(booking.check_in)}
         </p>
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
           <strong>Check Out: </strong>
           {formatDate(booking.check_out)}
         </p>
