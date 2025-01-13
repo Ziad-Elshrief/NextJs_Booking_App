@@ -5,7 +5,7 @@ You can create an account login then enjoy the ability to create, delete and vie
 
 ## Live Demo
 
-You can access the liver version on (vercel)[https://next-js-booking-jcu9r6jdu-ziad-elshriefs-projects.vercel.app/]
+You can access the liver version on [vercel](https://next-js-booking-jcu9r6jdu-ziad-elshriefs-projects.vercel.app/)
 
 
 ## Features
