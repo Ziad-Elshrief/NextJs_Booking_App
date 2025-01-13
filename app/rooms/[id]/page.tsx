@@ -5,7 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaChevronLeft } from "react-icons/fa";
 
-export default async function RoomPage({ params }: { params: { id: string } }) {
+export default async function RoomPage({ params }:{
+  params: Promise<{ id: string }>
+}) {
   const { id } = await params;
   const room = await getSingleRoom(id);
   const bucketId = process.env.NEXT_PUBLIC_APPWRITE_STORAGE_BUCKET_ROOMS;

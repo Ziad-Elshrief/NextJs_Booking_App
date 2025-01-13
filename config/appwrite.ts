@@ -20,7 +20,7 @@ const createAdminClient = async () => {
     }
 };
 
-const createSessionClient = async (session) => {
+const createSessionClient = async (session:string) => {
   const client = new Client();
 
   client

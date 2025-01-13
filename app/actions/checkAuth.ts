@@ -22,6 +22,7 @@ export default async function checkAuth(){
             }
         }
     }catch(error){
+        console.log(error)
         return {
             isAuthenticated:false
         }
